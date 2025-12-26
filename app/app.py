@@ -25,22 +25,19 @@ user_query = st.selectbox("Select or type drug name 👇", options=drug_list, in
 if st.button("Get Drug Information") and user_query:
     with st.spinner("Fetching verified clinical data..."):
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content":
-                 "You are a highly accurate clinical pharmacist. Provide:\n"
-                 "✔ Drug detailed monograph\n"
-                 "✔ Mechanism\n"
-                 "✔ Adult & Pediatric dosage\n"
-                 "✔ Side effects\n"
-                 "✔ Interactions\n"
-                 "✔ Pregnancy & Lactation\n"
-                 "✔ Renal/Hepatic safety\n"
-                 "Include emojis:\n"
-                 "⚠️ safety warning, 🚫 contraindication, ❗ caution"},
-                {"role": "user", "content": user_query}
-            ]
-        )
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content":
+         "You are a clinical pharmacist. Provide:\n"
+         "✔ Drug detailed monograph\n"
+         "...etc..."
+        },
+        {"role": "user", "content": drug}
+    ]
+)
+result = response["choices"][0]["message"]["content"]
+st.success(result)
+
         
         st.success(response["choices"][0]["message"]["content"])
 else:
