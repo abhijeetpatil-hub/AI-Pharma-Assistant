@@ -44,6 +44,10 @@ if st.button("Get Drug Information") and drug:
             max_tokens=600,
         )
         output = response.choices[0].message.content
+st.success(output)
+else:
+    st.info("💡 Start typing to see medicine name suggestions!")
+        output = response.choices[0].message.content
         st.success(output)
 else:
     st.info("💡 Start typing to see medicine name suggestions!")
