@@ -46,7 +46,29 @@ if st.button("Get Drug Information") and drug:
         output = response.choices[0].message.content
 st.success(output)
 else:
-    st.info("💡 Start typing to see medicine name suggestions!")
+    if st.button("Get Drug Information") and drug:
+    with st.spinner("Fetching verified clinical data..."):
+        response = client.chat.completions.create(
+            model="gpt-4.1-mini",
+            messages=[
+                {"role": "system", "content":
+                 "You are a clinical pharmacist. Provide:\n"
+                 "✔ Drug monograph\n"
+                 "✔ Mechanism\n"
+                 "✔ Adult/Pediatric dose\n"
+                 "✔ Side effects\n"
+                 "✔ Interactions\n"
+                 "✔ Pregnancy & Renal warnings\n"
+                 "⚠️ = safety | 🚫 = contraindication | ❗ = caution"},
+                {"role": "user", "content": drug}
+            ],
+            max_tokens=500
+        )
+        st.success(response.choices[0].message.content)
+
+else:
+    st.info("💡 Start typing a drug name!")
+
         output = response.choices[0].message.content
         st.success(output)
 else:
