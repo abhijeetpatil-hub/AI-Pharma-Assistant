@@ -1,13 +1,11 @@
 import streamlit as st
-from openai import OpenAI
 import pandas as pd
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 import openai
-openai.api_key = os.getenv("OPENAI_API_KEY")
+from dotenv import load_dotenv
+import os
 
+load_dotenv()  # Load .env from root folder
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 st.set_page_config(page_title="AI Pharma Assistant", page_icon="💊", layout="centered")
 st.title("💊 AI Pharma Assistant")
@@ -18,27 +16,32 @@ try:
     india_df = pd.read_csv("data/drugs_india.csv")
     usa_df = pd.read_csv("data/drugs_usa_fda.csv")
     drug_list = sorted(list(set(india_df['brand_name'].dropna().tolist() + usa_df['generic_name'].dropna().tolist())))
-except:
+except Exception as e:
+    st.error(f"Error loading data: {e}")
     drug_list = []
 
 user_query = st.selectbox("Select or type drug name 👇", options=drug_list, index=None, placeholder="Example: Augmentin")
 
 if st.button("Get Drug Information") and user_query:
     with st.spinner("Fetching verified clinical data..."):
-        response = client.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content":
-                 "You are a medical pharmacist. Always provide accurate drug info. Include:\n"
-                 "1️⃣ Drug details\n2️⃣ Mechanism\n3️⃣ Dosage (adult + pediatric)\n"
-                 "4️⃣ Side effects\n5️⃣ Interactions\n6️⃣ Pregnancy category\n"
-                 "7️⃣ Renal/hepatic impairment notes\n"
-                 "⚠️ Include emoji alerts for risks:\n"
-                 "⚠ safety alert\n🚫 contraindication\n❗ caution\n"
-                 },
+                 "You are a highly accurate clinical pharmacist. Provide:\n"
+                 "✔ Drug detailed monograph\n"
+                 "✔ Mechanism\n"
+                 "✔ Adult & Pediatric dosage\n"
+                 "✔ Side effects\n"
+                 "✔ Interactions\n"
+                 "✔ Pregnancy & Lactation\n"
+                 "✔ Renal/Hepatic safety\n"
+                 "Include emojis:\n"
+                 "⚠️ safety warning, 🚫 contraindication, ❗ caution"},
                 {"role": "user", "content": user_query}
             ]
         )
-        st.success(response.choices[0].message.content)
+        
+        st.success(response["choices"][0]["message"]["content"])
 else:
     st.info("💡 Tip: Start typing medicine name to see suggestions!")
