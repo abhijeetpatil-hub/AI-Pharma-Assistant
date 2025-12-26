@@ -24,21 +24,21 @@ user_query = st.selectbox("Select or type drug name 👇", options=drug_list, in
 
 if st.button("Get Drug Information") and user_query:
     with st.spinner("Fetching verified clinical data..."):
-        response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
+      response = openai.chat.completions.create(
+    model="gpt-4.1-mini",
     messages=[
         {"role": "system", "content":
          "You are a clinical pharmacist. Provide:\n"
          "✔ Drug detailed monograph\n"
-         "...etc..."
-        },
+         "✔ Mechanism\n"
+         "✔ Adult & Pediatric dosing\n"
+         "✔ Side effects\n"
+         "✔ Interactions\n"
+         "✔ Pregnancy & Renal warnings\n"
+         "⚠️ safety | 🚫 contraindication | ❗ caution"},
         {"role": "user", "content": drug}
     ]
 )
-result = response["choices"][0]["message"]["content"]
-st.success(result)
 
-        
-        st.success(response["choices"][0]["message"]["content"])
-else:
-    st.info("💡 Tip: Start typing medicine name to see suggestions!")
+result = response.choices[0].message.content
+st.success(result)
