@@ -4,16 +4,14 @@ from dotenv import load_dotenv
 import os
 from openai import OpenAI
 
-# Streamlit UI
 st.set_page_config(page_title="AI Pharma Assistant", page_icon="💊", layout="centered")
 st.title("💊 AI Pharma Assistant")
 st.write("Ask me detailed drug information!")
 
-# API Key
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Load drug data
+# Load drug names
 try:
     india_df = pd.read_csv("data/drugs_india.csv")
     usa_df = pd.read_csv("data/drugs_usa_fda.csv")
@@ -21,33 +19,22 @@ try:
         india_df['brand_name'].dropna().tolist() +
         usa_df['generic_name'].dropna().tolist()
     )))
-except:
-    st.error("Error loading drug dataset")
+except Exception as e:
+    st.error(f"Error loading data: {e}")
     drug_list = []
 
-drug = st.selectbox("Select drug", drug_list, index=None, placeholder="Example: Augmentin")
+drug = st.selectbox("Select a drug 👇", drug_list)
 
 if st.button("Get Drug Information") and drug:
-    with st.spinner("Fetching verified clinical data..."):
+    st.spinner("Processing...")
+    try:
         response = client.chat.completions.create(
             model="gpt-4.1-mini",
             messages=[
-                {"role": "system", "content": 
-                 "You are a clinical pharmacist. Provide concise and accurate:\n"
-                 "✔ Drug monograph\n"
-                 "✔ Mechanism\n"
-                 "✔ Adult/Pediatric dose\n"
-                 "✔ Side effects\n"
-                 "✔ Interactions\n"
-                 "✔ Pregnancy & Renal warnings\n"
-                 "⚠️ = safety | 🚫 = contraindication | ❗ = caution"},
+                {"role": "system", "content": "Provide detailed medical information."},
                 {"role": "user", "content": drug}
-            ],
-            max_tokens=500
+            ]
         )
-        answer = response.choices[0].message.content
-        st.success(answer)
-
-else:
-    st.info("💡 Start typing a drug name to search")
-// end of file
+        st.success(response.choices[0].message.content)
+    except Exception as e:
+        st.error("Error fetching data: " + str(e))
