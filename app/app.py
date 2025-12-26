@@ -1,15 +1,15 @@
 import streamlit as st
 import pandas as pd
-import openai
 from dotenv import load_dotenv
 import os
+from openai import OpenAI
 
 st.set_page_config(page_title="AI Pharma Assistant", page_icon="💊", layout="centered")
 st.title("💊 AI Pharma Assistant")
 st.write("Ask me detailed drug information!")
 
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Load drug names
 try:
@@ -27,11 +27,11 @@ drug = st.selectbox("Select or type drug name 👇", drug_list, index=None, plac
 
 if st.button("Get Drug Information") and drug:
     with st.spinner("Fetching verified clinical data..."):
-        response = openai.chat.completions.create(
+        response = client.chat.completions.create(
             model="gpt-4.1-mini",
             messages=[
                 {"role": "system", "content":
-                 "You are a clinical pharmacist. Provide:\n"
+                 "You are a clinical pharmacist. Provide detailed and accurate:\n"
                  "✔ Drug monograph\n"
                  "✔ Mechanism\n"
                  "✔ Adult & Pediatric dose\n"
@@ -39,12 +39,11 @@ if st.button("Get Drug Information") and drug:
                  "✔ Interactions\n"
                  "✔ Pregnancy & Renal warnings\n"
                  "⚠️ safety | 🚫 contraindication | ❗ caution"},
-                {"role": "user", "content": drug}
+                {"role": "user", "content": drug},
             ],
-            max_tokens=600
+            max_tokens=600,
         )
-        
-        result = response.choices[0].message.content
-        st.success(result)
+        output = response.choices[0].message.content
+        st.success(output)
 else:
     st.info("💡 Start typing to see medicine name suggestions!")
