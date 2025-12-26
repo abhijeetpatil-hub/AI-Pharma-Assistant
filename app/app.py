@@ -5,7 +5,9 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+import openai
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 
 st.set_page_config(page_title="AI Pharma Assistant", page_icon="💊", layout="centered")
 st.title("💊 AI Pharma Assistant")
