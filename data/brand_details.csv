@@ -1,0 +1,13 @@
+generic_name,brand_name,strength,price,currency,country,manufacturer,availability,price_in_inr
+Paracetamol,Calpol,500mg,17,INR,India,GSK,OTC,17
+Paracetamol,Dolo,650mg,30,INR,India,Micro Labs,Rx,30
+Paracetamol,Tylenol,500mg,1.20,USD,USA,Johnson & Johnson,OTC,100
+Paracetamol,Panadol,500mg,1.30,GBP,UK,Haleon,OTC,135
+
+Metformin,Glycomet,500mg,25,INR,India,USV,Rx,25
+Metformin,Glucophage,500mg,4,USD,USA,Merck,Rx,335
+Metformin,Janumet,50mg/500mg,12,USD,USA,Merck,Rx,1000
+
+Atorvastatin,Atorva,10mg,70,INR,India,Sun Pharma,Rx,70
+Atorvastatin,Lipitor,10mg,4,USD,USA,Pfizer,Rx,335
+Atorvastatin,Storvas,10mg,85,INR,India,Torrent Pharma,Rx,85

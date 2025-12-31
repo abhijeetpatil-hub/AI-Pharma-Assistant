@@ -1,0 +1,11 @@
+drug,interacts_with,severity,description
+Paracetamol,Alcohol,Moderate,Increased risk of liver damage due to combined hepatotoxic effects.
+Paracetamol,Warfarin,Major,Can enhance anticoagulant effect increasing bleeding risk.
+Ibuprofen,Aspirin,Major,Competes for COX-1 receptors reducing aspirin cardioprotective effect.
+Ibuprofen,Alcohol,Moderate,Increased stomach ulcer and bleeding risk.
+Metformin,Alcohol,Major,May increase risk of lactic acidosis especially in renal impairment.
+Metformin,Cimetidine,Moderate,Can reduce drug clearance leading to toxicity.
+Atorvastatin,Clarithromycin,Major,Increases atorvastatin levels causing muscle toxicity (rhabdomyolysis).
+Atorvastatin,Grapefruit Juice,Moderate,Inhibits metabolism leading to higher statin levels.
+Omeprazole,Clopidogrel,Major,Reduces activation of clopidogrel lowering antiplatelet effect.
+Azithromycin,Antacids,Mild,Decreases antibiotic absorption leading to treatment failure.

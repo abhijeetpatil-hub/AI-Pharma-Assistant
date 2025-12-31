@@ -1,0 +1,175 @@
+generic_name,brand_name,strength,price_inr,source
+Paracetamol,Calpol,500mg,17,India
+Amoxicillin,Augmentin,625mg,140,India
+Ibuprofen,Brufen,400mg,15,India
+Aspirin,Ecosprin,75mg,10,India
+Azithromycin,Azithral,500mg,110,India
+Ciprofloxacin,Ciplox,500mg,30,India
+Cetirizine,Cetzine,10mg,12,India
+Pantoprazole,Pantocid,40mg,45,India
+Omeprazole,Omez,20mg,30,India
+Ranitidine,Rantac,150mg,18,India
+Metformin,Glycomet,500mg,25,India
+Gliclazide,Diamicron,80mg,55,India
+Insulin Human,Actrapid,100IU/ml,160,India
+Amlodipine,Stamlo,5mg,32,India
+Losartan,Losar,50mg,45,India
+Telmisartan,Telma,40mg,55,India
+Atenolol,Aten,50mg,20,India
+Metoprolol,Betaloc,50mg,50,India
+Ramipril,Ramipres,5mg,65,India
+Enalapril,Enapril,5mg,45,India
+Atorvastatin,Atorlip,10mg,70,India
+Rosuvastatin,Rozavel,10mg,125,India
+Simvastatin,Simvotin,20mg,60,India
+Clopidogrel,Deplatt,75mg,95,India
+Warfarin,Acitrom,1mg,85,India
+Apixaban,Eliquis,5mg,650,India
+Furosemide,Lasix,40mg,20,India
+Spironolactone,Aldactone,25mg,30,India
+Hydrochlorothiazide,HCTZ,25mg,15,India
+Carvedilol,Cardivas,6.25mg,45,India
+Salbutamol,Asthalin,2mg,12,India
+Montelukast,Montair,10mg,120,India
+Budesonide,Foracort,200mcg,160,India
+Fluticasone,Seretide,250mcg,190,India
+Prednisolone,Omnacortil,10mg,28,India
+Dexamethasone,Dexona,4mg,18,India
+Levothyroxine,Thyronorm,50mcg,120,India
+Methimazole,Neomercazole,10mg,85,India
+Vitamin D3,Shelcal,60k IU,32,India
+Calcium Carbonate,Shelcal,500mg,90,India
+Iron + Folic Acid,Folvite,5mg,30,India
+Oral Rehydration Salts,Electral,,25,India
+Zinc Sulfate,Zincovit,20mg,65,India
+Doxycycline,Doxicip,100mg,20,India
+Amikacin,Amikacip,500mg,95,India
+Gentamicin,Zentamicin,80mg,30,India
+Linezolid,Linox,600mg,220,India
+Meropenem,Meronem,1g,950,India
+Ceftriaxone,Monocef,1g,130,India
+Cefixime,Cefspan,200mg,110,India
+Metronidazole,Flagyl,400mg,20,India
+Clotrimazole,Clotrimazole,1% Cream,18,India
+Fluconazole,Flucos,150mg,28,India
+Acyclovir,Acivir,400mg,120,India
+Oseltamivir,Tamiflu,75mg,420,India
+Loperamide,Imodium,2mg,30,India
+Domperidone,Domstal,10mg,22,India
+Ondansetron,Emeset,4mg,45,India
+Rabeprazole,Rabeloc,20mg,55,India
+Sucralfate,Sucrafil,1g/10ml,150,India
+Tamsulosin,Urimax,0.4mg,100,India
+Finasteride,Finax,1mg,180,India
+Sildenafil,Manforce,50mg,160,India
+Tadalafil,Cialis,10mg,250,India
+Sitagliptin,Janumet,50mg/500mg,290,India
+Vildagliptin,Galvus,50mg,260,India
+Metformin + Glimepiride,Amaryl M,1mg/500mg,140,India
+Glibenclamide,Daonil,5mg,30,India
+Insulin Glargine,Lantus,100IU/ml,780,India
+Insulin Aspart,Novorapid,100IU/ml,900,India
+Acetaminophen,Tylenol,500mg,,USA
+Ibuprofen,Advil,200mg,,USA
+Naproxen,Aleve,220mg,,USA
+Amoxicillin,Amoxil,500mg,,USA
+Cefdinir,Omnicef,300mg,,USA
+Azithromycin,Zithromax,250mg,,USA
+Ciprofloxacin,Cipro,500mg,,USA
+Levofloxacin,Levaquin,500mg,,USA
+Amoxicillin + Clavulanate,Augmentin,875mg,,USA
+Pantoprazole,Protonix,40mg,,USA
+Omeprazole,Prilosec,20mg,,USA
+Lansoprazole,Prevacid,30mg,,USA
+Metformin,Glucophage,500mg,,USA
+Sitagliptin,Januvia,100mg,,USA
+Pioglitazone,Actos,15mg,,USA
+Insulin Aspart,NovoLog,100IU/ml,,USA
+Insulin Glargine,Lantus,100IU/ml,,USA
+Amlodipine,Norvasc,5mg,,USA
+Losartan,Cozaar,50mg,,USA
+Lisinopril,Prinivil,10mg,,USA
+Atorvastatin,Lipitor,20mg,,USA
+Rosuvastatin,Crestor,10mg,,USA
+Simvastatin,Zocor,20mg,,USA
+Clopidogrel,Plavix,75mg,,USA
+Aspirin,Bayer,81mg,,USA
+Warfarin,Coumadin,5mg,,USA
+Apixaban,Eliquis,5mg,,USA
+Rivaroxaban,Xarelto,10mg,,USA
+Furosemide,Lasix,40mg,,USA
+Spironolactone,Aldactone,25mg,,USA
+Carvedilol,Coreg,6.25mg,,USA
+Metoprolol,Lopressor,50mg,,USA
+Hydrochlorothiazide,Microzide,25mg,,USA
+Prednisone,Deltasone,10mg,,USA
+Methylprednisolone,Medrol,16mg,,USA
+Dexamethasone,Decadron,4mg,,USA
+Levothyroxine,Synthroid,50mcg,,USA
+Liothyronine,Cytomel,25mcg,,USA
+Cetirizine,Zyrtec,10mg,,USA
+Loratadine,Claritin,10mg,,USA
+Fexofenadine,Allegra,120mg,,USA
+Diphenhydramine,Benadryl,25mg,,USA
+Montelukast,Singulair,10mg,,USA
+Albuterol,ProAir HFA,90mcg,,USA
+Budesonide,Pulmicort,200mcg,,USA
+Fluticasone,Flovent,250mcg,,USA
+Tiotropium,Spiriva,18mcg,,USA
+Benzonatate,Tessalon,200mg,,USA
+Dextromethorphan,Robitussin,10mg,,USA
+Guaifenesin,Mucinex,600mg,,USA
+Acetylcysteine,Mucomyst,200mg,,USA
+Paroxetine,Paxil,20mg,,USA
+Sertraline,Zoloft,50mg,,USA
+Fluoxetine,Prozac,20mg,,USA
+Escitalopram,Lexapro,10mg,,USA
+Alprazolam,Xanax,0.5mg,,USA
+Diazepam,Valium,5mg,,USA
+Quetiapine,Seroquel,100mg,,USA
+Olanzapine,Zyprexa,10mg,,USA
+Haloperidol,Haldol,5mg,,USA
+Gabapentin,Neurontin,300mg,,USA
+Pregabalin,Lyrica,75mg,,USA
+Carbamazepine,Tegretol,200mg,,USA
+Valproic Acid,Depakene,500mg,,USA
+Lamotrigine,Lamictal,100mg,,USA
+Topiramate,Topamax,50mg,,USA
+Morphine,Morphine Sulfate,15mg,,USA
+Tramadol,Ultram,50mg,,USA
+Hydrocodone,Hydrocodone/APAP 5-325,,USA
+Oxycodone,OxyContin,10mg,,USA
+Codeine,Codeine/APAP 30-300,,USA
+Acetylsalicylic Acid,Aspirin,325mg,,USA
+Naproxen,Naprosyn,500mg,,USA
+Ketorolac,Toradol,10mg,,USA
+Cyclobenzaprine,Flexeril,10mg,,USA
+Baclofen,Lioresal,10mg,,USA
+Allopurinol,Zyloprim,100mg,,USA
+Colchicine,Colcrys,0.6mg,,USA
+Levocetirizine,Xyzal,5mg,,USA
+Meclizine,Antivert,25mg,,USA
+Ondansetron,Zofran,4mg,,USA
+Omeprazole + Sodium Bicarb,Zegerid,20mg,,USA
+Famotidine,Pepcid,20mg,,USA
+Sucralfate,Carafate,1g,,USA
+Alendronate,Fosamax,70mg,,USA
+Cholecalciferol,Vitamin D3,2000IU,,USA
+Magnesium,Mag-Ox,400mg,,USA
+Potassium Chloride,Klor-Con,10mEq,,USA
+Folic Acid,Folvite,1mg,,USA
+Cyanocobalamin,Vitamin B12,1000mcg,,USA
+Ivermectin,Stromectol,12mg,,USA
+Nicotine,Nicoderm CQ Patch,21mg,,USA
+Clindamycin,Cleocin,300mg,,USA
+Vancomycin,Vancocin,500mg,,USA
+Meropenem,Merrem,1g,,USA
+Ceftriaxone,Rocephin,1g,,USA
+Cefazolin,Ancef,1g,,USA
+Cefuroxime,Ceftin,500mg,,USA
+Cefepime,Maxipime,1g,,USA
+Aztreonam,Azactam,1g,,USA
+Acyclovir,Zovirax,400mg,,USA
+Oseltamivir,Tamiflu,75mg,,USA
+Ranitidine,Zantac,150mg,,USA
+Torsemide,Demadex,10mg,,USA

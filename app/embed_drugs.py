@@ -2,30 +2,31 @@ import pandas as pd
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
-import pickle
 import os
 
-# Load datasets
-india_df = pd.read_csv("data/drugs_india.csv")
-usa_df = pd.read_csv("data/drugs_usa_fda.csv")
+DATA_PATH = "data/drugs_full_500.csv"
+EMB_PATH = "data/drug_embeddings.faiss"
+MAP_PATH = "data/drug_mapping.csv"
 
-# Combine text
-texts = list(india_df['brand_name']) + list(usa_df['generic_name'])
+print("📌 Loading dataset...")
+df = pd.read_csv(DATA_PATH)
 
-# Model for embeddings
-model = SentenceTransformer('all-MiniLM-L6-v2')
+print("🧠 Loading embedding model...")
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# Create embeddings
-vectors = model.encode(texts)
+print("🔍 Generating embeddings...")
+sentences = df["generic_name"].fillna("") + " " + df["brand_name"].fillna("")
+embeddings = model.encode(sentences.tolist(), show_progress_bar=True)
 
-# Save index
-index = faiss.IndexFlatL2(vectors.shape[1])
-index.add(np.array(vectors))
+print("🗂 Converting to FAISS index...")
+embeddings = np.array(embeddings).astype("float32")
+index = faiss.IndexFlatL2(embeddings.shape[1])
+index.add(embeddings)
 
-faiss.write_index(index, "model/drug_index.faiss")
+print("💾 Saving FAISS & mapping...")
+faiss.write_index(index, EMB_PATH)
+df.to_csv(MAP_PATH, index=False)
 
-# Save mapping
-with open("model/drug_mapping.pkl", "wb") as f:
-    pickle.dump(texts, f)
-
-print("Embedding complete! 🚀")
+print("🎯 Completed: Embeddings saved successfully!")
+print(f"➡ {EMB_PATH}")
+print(f"➡ {MAP_PATH}")
