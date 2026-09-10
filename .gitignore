@@ -1,15 +1,38 @@
+# IDE / OS
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Android / Gradle
+.gradle/
+build/
+**/build/
 local.properties
+.externalNativeBuild/
+.cxx/
+captures/
+
+# Secrets / private data
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+app/users.json
+users.json
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+
+# Local models / generated artifacts
+*.log
